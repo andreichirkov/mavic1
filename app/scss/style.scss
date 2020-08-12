@@ -1,0 +1,440 @@
+@import "vars";
+@import "libs";
+@import "fonts";
+@import "global";
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 20px;
+  right: 0;
+  z-index: 10;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 30px;
+    font-size: 15px;
+    line-height: 17px;
+    @extend %ubuntu-medium
+  }
+  &__btn {
+    color: #ffffff;
+    background-color: transparent;
+    padding: 6px 28px;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    margin-right: 8px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .3s;
+    &:hover {
+      color: black;
+      background-color: white;
+    }
+  }
+  &__phone {
+    font-size: 16px;
+    line-height: 18px;
+    @extend %ubuntu-bold;
+  }
+}
+
+.menu {
+  &__list-item {
+    display: inline-block;
+    & + .menu__list-item {
+      padding-left: 20px;
+    }
+  }
+}
+
+//secton TOP - 1
+.top {
+  background-image: url("../images/top-bg.jpg");
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: radial-gradient(45.97% 54.43% at 50% 45.57%, rgba(23, 26, 28, 0) 50.28%, rgba(23, 26, 28, 0.00225974) 50.29%, rgba(4, 5, 5, 0.820343) 58.72%, rgba(5, 5, 6, 0.792703) 80.08%, #000000 87.89%);
+    opacity: 0.4;
+  }
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  &__title {
+    font-size: 96px;
+    line-height: 115px;
+    @extend %sf-semibold;
+    margin-bottom: 25px;
+  }
+  &__text {
+    margin: 25px 0 35px;
+    max-width: 325px;
+  }
+  &__social-item {
+    display: inline-block;
+    margin: 0 25px;
+  }
+  &__social-link {
+    opacity: 0.7;
+    transition: all .3s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+//section products (что такое) - 2
+.products {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 50px;
+  }
+  &__text {
+    max-width: 440px;
+    p {
+      margin-bottom: 30px;
+    }
+  }
+  &__slider-box {
+    position: relative;
+    padding-top: 110px;
+  }
+  &__slider-text {
+    width: 285px;
+    position: absolute;
+    text-align: right;
+    font-size: 24px;
+    line-height: 28px;
+    @extend %ubuntu-medium;
+    bottom: 30px;
+    left: -150px;
+    //z-index: -1;
+  }
+  &__slider {
+    min-width: 560px;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 560px;
+      height: 276px;
+      border: 4px solid #ffffff;
+      top: 75px;
+      right: -17px;
+      z-index: -1;
+    }
+  }
+}
+
+//section benefits  Преимущества - 3
+.benefits {
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    //justify-content: space-between;
+    //margin-bottom: 100px;
+    padding-left: 50px;
+  }
+  &__item {
+    margin-bottom: 100px;
+    display: flex;
+    align-items: flex-end;
+    &:nth-child(even) {
+      margin-left: 60px;
+      transform: translateY(30px);
+    }
+  }
+  &__item-1,
+  &__item-3 {
+    position: relative;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+    }
+  }
+  &__item-1 {
+
+    &::before {
+      content: '';
+      height: 48px;
+      width: 245px;
+      background-image: url("../images/line-1.svg");
+      right: -120px;
+      top: 38px;
+    }
+  }
+  &__item-3 {
+    &::before {
+      background-image: url("../images/line-3.svg");
+      width: 254px;
+      height: 39px;
+      right: -55px;
+      top: 50px;
+    }
+    &::after {
+      background-image: url("../images/line-2.svg");
+      width: 463px;
+      height: 62px;
+      top: -70px;
+      right: -54px;
+    }
+  }
+  &__num {
+    line-height: 41px;
+    font-size: 36px;
+    @extend %ubuntu-bold;
+    margin-right: 10px;
+  }
+  &__img {
+    position: relative;
+    margin-right: 32px;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 193px;
+      height: 128px;
+      border: 2px solid white;
+      top: -12px;
+      right: -12px;
+      z-index: -1;
+    }
+  }
+  &__info {
+    width: 300px;
+  }
+  &__info-title {
+    width: 123px;
+    font-size: 21px;
+    line-height: 24px;
+    @extend %ubuntu-bold;
+    margin-bottom: 10px;
+  }
+  &__info-text {
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+
+//section specification (характеристики) - 4
+.specification {
+  &__inner {
+    display: flex;
+    //justify-content: space-;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  &__item {
+
+  }
+  &__box {
+    width: 280px;
+    position: relative;
+    margin-top: 10px;
+    &::before {
+      content: '';
+      position: absolute;
+    }
+  }
+  &__box-2 {
+    margin-top: 110px;
+  }
+  &__box-4 {
+    margin-top: 110px;
+  }
+
+  &__box-title {
+    font-size: 21px;
+    line-height: 28px;
+    @extend %ubuntu-bold;
+    margin-bottom: 10px;
+  }
+  &__box-text {
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+
+// вопросы - 5
+.questions {
+  &__items {
+    max-width: 757px;
+    padding-bottom: 15px;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 319px;
+      height: 125px;
+      top: -33px;
+      right: -319px;
+      background-image: url('../images/questions-bg.png');
+    }
+  }
+  &__item {
+    max-width: 690px;
+    background-color: rgba(0, 0, 0, .3);
+  }
+  &__item-title {
+    font-size: 21px;
+    line-height: 28px;
+    @extend %ubuntu-medium;
+    color: rgba(#fff, .8);
+    padding: 15px 90px 24px 40px;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 2px;
+    &::after {
+      content: url("../images/accord-arrow.svg");
+      position: absolute;
+      width: 72px;
+      height: 67px;
+      background-color: #fff;
+      right: -72px;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__item-text {
+    padding: 0 5px 75px 50px;
+    font-size: 15px;
+    line-height: 22px;
+    //margin: 0;
+    display: none;
+    margin-bottom: 2px;
+  }
+}
+
+
+
+.contacts {
+  &__inner {
+    display: flex;
+    padding-left: 50px;
+    margin-bottom: 10px;
+  }
+  &__info {
+    width: 240px;
+    margin-right: 60px;
+  }
+  &__info-box {
+    margin-bottom: 30px;
+  }
+  &__info-title {
+    font-size: 21px;
+    line-height: 24px;
+    @extend %ubuntu-bold;
+    margin: 0 0 13px;
+  }
+  &__info-phone,
+  &__info-email {
+    font-size: 15px;
+    line-height: 18px;
+  }
+  &__info-email:hover {
+    text-decoration: underline;
+  }
+  &__form {
+    width: 570px;
+    margin-right: 106px;
+  }
+  &__form-title {
+    font-size: 21px;
+    line-height: 24px;
+    @extend %ubuntu-bold;
+    margin: 0 0 13px;
+  }
+  &__form-text {
+    font-size: 15px;
+    line-height: 18px;
+    margin: 0 0 12px;
+  }
+  &__form-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  &__form-input,
+  &__form-textarea {
+    background: rgba(0, 0, 0, .5);
+    padding: 15px;
+    border: none;
+    @extend %ubuntu-medium;
+    font-size: 13px;
+    line-height: 18px;
+    color: #ffffff;
+    &::placeholder {
+      color: rgba(#ffffff, 0.4);
+    }
+  }
+  &__form-input {
+    width: 49%;
+    color: white;
+  }
+  &__form-textarea {
+    min-height: 144px;
+    width: 100%;
+    resize: none;
+    margin-bottom: 20px;
+  }
+  &__form-btn {
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 18px;
+    @extend %ubuntu-bold;
+    border-radius: 2px;
+    border: 1px solid #ffffff;
+    padding: 9px 15px;
+    color: #ffffff;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .3s;
+    &:hover {
+      background-color: #fff;
+      color: black;
+    }
+  }
+  &__social-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__social-item {
+    margin: 14px 0;
+  }
+  &__social-link {
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.footer {
+  margin-top: 5%;
+  text-align: left;
+  padding-left: 25px;
+  color: rgba(white, .65);
+}
+
+
+@import "media"
+;
